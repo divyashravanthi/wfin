@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: world_finance_production
-  username: world_finance
-  password: <%= ENV['WORLD_FINANCE_DATABASE_PASSWORD'] %>
+  username: root
+  password: root

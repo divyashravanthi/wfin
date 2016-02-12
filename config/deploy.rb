@@ -10,7 +10,7 @@ set :repo_url, 'git@github.com:divyashravanthi/wfin.git'
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/www/wfin'
 
-set :rails_env, 'production'
+set :rails_env, 'development'
 
 # Default value for :scm is :git
 # set :scm, :git

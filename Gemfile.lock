@@ -42,6 +42,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.2)
+    cancancan (1.13.1)
     capistrano (3.4.0)
       i18n
       rake (>= 10.0.0)
@@ -206,6 +207,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  cancancan
   capistrano
   capistrano-rails (~> 1.1)
   capistrano-rvm

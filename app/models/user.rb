@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   def set_password; nil; end
 
   def assign_sponsor
-  	User.find(self.sponsor_id) << self.recruited_users
+  	User.find(self.sponsor_id).recruited_users << self
   end
 
   def set_password=(value)

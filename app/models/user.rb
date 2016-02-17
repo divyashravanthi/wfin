@@ -20,13 +20,14 @@ class User < ActiveRecord::Base
     end
   end
 
-  before_create :assign_sponsor
+  after_create :assign_sponsor
 
   # Provided for Rails Admin to allow the password to be reset
   def set_password; nil; end
 
   def assign_sponsor
-  	User.find(self.sponsor_id).recruited_users << self
+  	f = User.find(self.sponsor_id)
+  	f.recruited_users << self
   end
 
   def set_password=(value)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217001928) do
+ActiveRecord::Schema.define(version: 20160217011110) do
 
   create_table "recruits", force: :cascade do |t|
     t.integer  "user_id",           limit: 4
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160217001928) do
     t.string   "name_of_sponsor",        limit: 255
     t.datetime "date_registered"
     t.boolean  "is_admin"
+    t.integer  "sponsor_id",             limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

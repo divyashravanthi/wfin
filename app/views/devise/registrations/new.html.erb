@@ -21,6 +21,10 @@
           <label for="exampleInputEmail1">Confirm password</label>
           <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm Password" %>
         </div>
+        <div class="form-group">
+          <!-- <label for="exampleInputEmail1">Sponsor ID</label> -->
+          <%= f.number_field :sponsor_id, autocomplete: "off", class: "form-control", placeholder: "Sponsor ID" %>
+        </div>
         <%= f.submit "Sign Up", class: "btn btn-sm btn-default" %>
     </div>
   </div>

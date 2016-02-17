@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160212160010) do
+ActiveRecord::Schema.define(version: 20160217001928) do
+
+  create_table "recruits", force: :cascade do |t|
+    t.integer  "user_id",           limit: 4
+    t.integer  "recruited_user_id", limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "recruits", ["recruited_user_id"], name: "index_recruits_on_recruited_user_id", using: :btree
+  add_index "recruits", ["user_id", "recruited_user_id"], name: "index_recruits_on_user_id_and_recruited_user_id", unique: true, using: :btree
+  add_index "recruits", ["user_id"], name: "index_recruits_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",     null: false
@@ -39,4 +50,6 @@ ActiveRecord::Schema.define(version: 20160212160010) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "recruits", "users"
+  add_foreign_key "recruits", "users", column: "recruited_user_id"
 end

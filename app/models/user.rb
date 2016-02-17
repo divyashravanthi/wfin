@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   GENDER = %w(Male Female)
   validates :gender, :inclusion => {:in => GENDER}
+
+  has_many :recruits
+  has_many :recruited_users, through: :recruits
+
   rails_admin do
     configure :set_password
 

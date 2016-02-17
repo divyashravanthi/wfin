@@ -10,9 +10,13 @@ Rails.application.routes.draw do
 
   authenticated do
     root :to => 'home#member_index', as: :authenticated
+    get '/profile' => 'home#profile'
+    get '/group' => 'home#group'
   end
   
   root :to => 'home#index'
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

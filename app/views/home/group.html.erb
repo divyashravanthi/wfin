@@ -1,0 +1,15 @@
+<br/><br/><br/><br/><div class="text-center col-md-5 col-md-offset-3">
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h3 class="panel-title">
+          List of Recruits</h3>
+  </div>
+  <ul class="list-group">
+    <% if @recruits.present? %>
+    <% @recruits.each do |r| %>
+      <li class="list-group-item">User #<%=r.id%> - <%=r.first_name %> <%=r.last_name %></li>
+    <% end %>
+    <% end %>
+  </ul>
+</div>
+</div>
